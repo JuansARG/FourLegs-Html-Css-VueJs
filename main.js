@@ -70,7 +70,7 @@ Vue.createApp({
 		},
 		aumentarCantidad(id) {
 			let articulo = this.buscarArticulo(id);
-			if (this.carrito[id].cantidad === articulo.stock) {
+			if (this.carrito[id].cantidad === articulo.disponibles) {
 				this.alertaLimiteDeUnidades();
 			} else {
 				this.carrito[id].cantidad++;

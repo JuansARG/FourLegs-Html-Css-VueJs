@@ -81,15 +81,15 @@
 					<div class="card" style="max-width: 650px">
 						<div class="row g-0">
 							<div class="col-md-5 d-flex">
-								<img :src="a.imagen" class="img-fluid" :alt="a.nombre" />
+								<img :src="a.imagen" class="img-fluid" :alt="a.producto" />
 							</div>
 							<div class="col-md-7 h-100">
 								<div class="card-body h-100 d-flex flex-column">
-									<h6 class="fs-5 card-title py-1 fw-bolder text-dark">{{a.nombre}}</h6>
+									<h6 class="fs-5 card-title py-1 fw-bolder text-dark">{{a.producto}}</h6>
 									<p class="description text-dark">{{a.descripcion}}</p>
 									<p class="fs-5 text-dark fw-bold">Precio: ${{a.precio}}</p>
-									<p class="fs-5 text-danger fw-bold" v-if="a.stock < 5">Ultimas unidades!!</p>
-									<p class="fs-5 text-dark fw-bold" v-else>Stock: {{a.stock}} Unidades.</p>
+									<p class="fs-5 text-danger fw-bold" v-if="a.disponibles < 5">Ultimas unidades!!</p>
+									<p class="fs-5 text-dark fw-bold" v-else>Stock: {{a.disponibles}} Unidades.</p>
 									<div class="d-flex justify-content-end">
 										<button type="button" class="btn btnCard d-flex mt-auto"
 											@click="agregarAlCarrito(a.nuevoId)">

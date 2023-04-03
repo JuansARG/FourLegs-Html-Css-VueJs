@@ -69,7 +69,7 @@ Vue.createApp({
 		},
 		aumentarCantidad(id) {
 			let articulo = this.buscarArticulo(id);
-			if (this.carrito[id].cantidad === articulo.stock) {
+			if (this.carrito[id].cantidad === articulo.disponibles) {
 				Swal.fire("Usted tiene toda las unidades que disponemos en el carrito en este momento!");
 			} else {
 				this.carrito[id].cantidad++;
@@ -132,9 +132,9 @@ Vue.createApp({
 	},
 	computed: {
 		filtrar() {
-			let filtro1 = this.articulosTipoMedicamentos.filter((d) =>
-				d.producto.includes(this.input)
-			);
+			let filtro1 = this.articulosTipoMedicamentos.filter(articulo => articulo.producto.trim()
+																						.toLowerCase()
+																						.includes(this.input.trim().toLowerCase()));
 			this.articulosFiltrados = filtro1;
 		},
 		calcularTotal() {
